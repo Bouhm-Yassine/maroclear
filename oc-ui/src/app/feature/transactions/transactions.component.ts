@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
 import { TransactionsAddComponent } from './components/transactions-add/transactions-add.component';
 import { TransactionStateService } from './transaction.state';
@@ -20,7 +20,7 @@ export class TransactionsComponent {
       nzOkText: "Sauvegarder",
       nzMaskClosable: false,
       nzWrapClassName: "vertical-center-modal",
-      nzBodyStyle: { maxHeight: "500px", overflow: "auto" }
+      nzBodyStyle: { maxHeight: "550px", overflow: "auto" }
     });
 
     modal.afterClose.subscribe((res: any) => {

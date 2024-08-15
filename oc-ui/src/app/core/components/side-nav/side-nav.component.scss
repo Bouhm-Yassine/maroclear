@@ -1,12 +1,12 @@
 // Menu item selected
 .ant-menu-item.ant-menu-item-selected {
-  color: #cd6d1f;
+  color: white;
 }
 
 // Submenu item selected
 .ant-menu-item.ant-menu-item-selected div {
   border-radius: 6px;
-  border-left: 2px solid #cd6d1f;
+  border-left: 2px solid white;
   background: rgba(241, 37, 41, 0.1);
   padding-left: 16px;
   color: white;
@@ -29,11 +29,11 @@
 }
 
 .ant-menu-item:hover {
-  color: #cd6d1f;
+  color: white;
 }
 
 .ant-menu-submenu:hover {
-  color: #cd6d1f;
+  color: white;
 }
 
 .ant-menu {

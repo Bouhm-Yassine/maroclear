@@ -18,12 +18,20 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { TransactionsListComponent } from './components/transactions-list/transactions-list.component';
 import { TransactionsAddComponent } from './components/transactions-add/transactions-add.component';
+import { OperatorComponent } from './components/operator/operator.component';
+import { OperatorTransactionListComponent } from './components/operator-transaction-list/operator-transaction-list.component';
+import { CompleterOperationComponent } from './components/completer-operation/completer-operation.component';
+import { NzCardModule } from "ng-zorro-antd/card";
 
 
 const routes: Routes = [
   {
     path: "",
     component: TransactionsComponent
+  },
+  {
+    path: "operateurs",
+    component: OperatorComponent
   }
 ]
 
@@ -32,7 +40,10 @@ const routes: Routes = [
   declarations: [
     TransactionsComponent,
     TransactionsListComponent,
-    TransactionsAddComponent
+    TransactionsAddComponent,
+    OperatorComponent,
+    OperatorTransactionListComponent,
+    CompleterOperationComponent
   ],
   imports: [
     RouterModule.forChild(routes),
@@ -53,6 +64,7 @@ const routes: Routes = [
     NzTableModule,
     TagComponent,
     NzDropDownModule,
+    NzCardModule
   ]
 })
 export class TransactionsModule { }

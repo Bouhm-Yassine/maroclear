@@ -9,9 +9,9 @@ import { submitForm } from '../../../../shared/form.utils';
   styles: ``
 })
 export class TransactionsAddComponent {
-  emetteurs = ['Maroc telecom']
-  type_actions = ['OPCM']
-  depositaires = ['AWB', 'BOA']
+  emetteurs = ['AFMA SA', 'AFRIC INDUSTRIES SA', 'AFRIQUIA GAZ', 'AGMA', 'AKDITAL', 'ALUMINIUM DU MAROC', 'ARADEI CAPITAL']
+  type_actions = ['Bons du tresor', 'Obligations & TCN', 'OPCVM', 'FPCTO', 'PCI', 'OPCC']
+  depositaires = ['APSB', 'AL WASSIT', 'ALMA FINANCE GROUP', 'ARTBOURSE', 'ATLAS CAPITAL BOURSE', 'ATTIJARI INTERMEDIATION', 'BMCE CAPITAL BOURSE', 'BMCI BOURSE', 'CAPITAL TRUST SECURITIES', 'CDG CAPITAL BOURSE', 'CFG MARCHES', 'MAROC SERVICES INTERMEDIATION', 'RED MED SECURITIES']
   exclusifs = ['Oui', 'Non']
 
   loading = signal<boolean>(false);
@@ -29,6 +29,7 @@ export class TransactionsAddComponent {
   initializeForm() {
     this.form = this.fb.group({
       id: null,
+      code_isin: [null, Validators.required],
       emetteur: [null, Validators.required],
       type_action: [null, Validators.required],
       date_emission: [null, Validators.required],
@@ -37,7 +38,8 @@ export class TransactionsAddComponent {
       interet: [null, Validators.required],
       depositaire_inscription: [null, Validators.required],
       exclusif: [null, Validators.required],
-      depositaire_radiation: [null, Validators.required]
+      depositaire_radiation: [null, Validators.required],
+      quantite: [null, Validators.required]
     });
   }
 

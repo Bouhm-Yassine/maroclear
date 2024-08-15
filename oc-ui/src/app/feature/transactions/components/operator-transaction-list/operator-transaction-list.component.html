@@ -14,14 +14,11 @@
       <th [nzSortFn]="true">Code ISIN</th>
       <th [nzSortFn]="true">Emetteur</th>
       <th [nzSortFn]="true">Type d'action</th>
-      <th [nzSortFn]="true">Quantité</th>
       <th [nzSortFn]="true">Date d'émission</th>
       <th [nzSortFn]="true">Date d'échéance</th>
       <th [nzSortFn]="true">Dividendes</th>
       <th [nzSortFn]="true">Intérêts</th>
-      <th [nzSortFn]="true">Dépositaire inscription</th>
-      <th [nzSortFn]="true">Exclusif</th>
-      <th [nzSortFn]="true">Dépositaire radiation</th>
+      <th nzWidth="70px"></th>
     </tr>
   </thead>
   <tbody>
@@ -31,9 +28,6 @@
       </td>
       <td>{{ data.emetteur }}</td>
       <td>{{ data.type_action }}</td>
-      <td>
-        <app-tag [value]="data.quantite" />
-      </td>
       <td>{{ data.date_emission | date : "mediumDate" }}</td>
       <td>{{ data.date_echeance | date : "mediumDate" }}</td>
       <td>
@@ -42,14 +36,16 @@
       <td>
         <app-tag [value]="data.interet + '%'" />
       </td>
-      <td>{{ data.depositaire_inscription }}</td>
       <td>
-        <app-tag
-          [value]="data.exclusif"
-          [type]="data.exclusif == 'Oui' ? 'green-white' : 'red-white'"
-        />
+        <button
+          class="bg-transparent border-0 shadow-none"
+          nz-button
+          (click)="completer()"
+        >
+          <span class="mr-2" nz-icon nzType="edit"></span>
+          Compléter
+        </button>
       </td>
-      <td>{{ data.depositaire_radiation }}</td>
     </tr>
   </tbody>
 </nz-table>

@@ -1,0 +1,19 @@
+<div class="h-full flex flex-col">
+  <div class="flex justify-between">
+    <div class="flex items-center gap-2">
+      <button nz-button>
+        <i nz-icon nzType="reload"></i>
+      </button>
+    </div>
+    <nz-input-group nzSearch class="w-1/4" [nzPrefix]="suffixIconButton">
+      <input #searchInput type="text" nz-input placeholder="Recherche" />
+    </nz-input-group>
+    <ng-template #suffixIconButton>
+      <span nz-icon nzType="search"></span>
+    </ng-template>
+  </div>
+
+  <div class="flex-auto h-0 overflow-y-auto overflow-x-auto bg-white mt-4 p-1">
+    <operator-transaction-list />
+  </div>
+</div>
