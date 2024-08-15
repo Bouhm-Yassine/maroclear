@@ -1,0 +1,81 @@
+@import "../node_modules/ng-zorro-antd/ng-zorro-antd.less";
+
+// Font family
+@font-family: "Avenir";
+
+// Base styles
+@border-radius-base: 0;
+@border-radius-sm: 0;
+@font-size-base: 14px;
+
+// Colors
+@primary-color: #ef8022;
+@secondary-color: #95c13d;
+@success-color: @green-6;
+@error-color: @red-6;
+@highlight-color: @red-6;
+@warning-color: @gold-6;
+@normal-color: #d9d9d9;
+@white: #fff;
+@black: #000;
+
+// Size
+@font-size-base: 15px;
+@font-size-sm: 13px;
+
+// Modal
+@modal-footer-border-color-split: transparent;
+.ant-modal-title,
+.ant-modal-close-icon {
+  // color: @white;
+}
+
+// Buttons
+@btn-border-radius-base: @border-radius-base;
+@btn-border-radius-sm: @border-radius-base;
+@btn-padding-horizontal-base: 32px;
+
+// Primary button (nzType=primary)
+.ant-btn.ant-btn-primary:hover,
+.ant-btn.ant-btn-primary:focus {
+  color: @primary-color;
+  border-color: @primary-color;
+  background-color: white;
+}
+
+// Seconday button (nzType=default)
+.ant-btn.ant-btn[ng-reflect-nz-type="default"] {
+  color: white;
+  border-color: @secondary-color;
+  background-color: @secondary-color;
+}
+
+.ant-btn[ng-reflect-nz-type="default"],
+.ant-btn[ng-reflect-nz-type="default"]:hover,
+.ant-btn[ng-reflect-nz-type="default"]:focus {
+  color: @secondary-color;
+  border-color: @secondary-color;
+  background-color: white;
+}
+
+.ant-btn.ant-btn-dashed {
+  color: @secondary-color;
+  border-color: @secondary-color;
+  background-color: white;
+}
+
+// Form
+@form-vertical-label-padding: 0 0 8px;
+@form-item-label-font-size: @font-size-base;
+
+// Layout
+@layout-sider-background: @primary-color;
+
+//table
+@table-header-color: @primary-color;
+.ant-table-thead > tr > th {
+  font-weight: 600;
+}
+
+// SideNav menu-item
+@menu-item-active-bg: none;

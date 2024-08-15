@@ -1,0 +1,55 @@
+version: "2.1"
+services:
+  # oc-krakend:
+  #   container_name: oc-krakend
+  #   image: oc-krakend:latest
+  #   restart: always
+  #   build: ./oc-krakend
+  #   networks:
+  #     - oc-network
+  #   ports:
+  #     - "8080:8080"
+
+  # oc-ui:
+  #   container_name: oc-ui
+  #   image: oc-ui:latest
+  #   restart: always
+  #   build: ./oc-ui
+  #   ports:
+  #     - "80:80"
+  #   networks:
+  #     - oc-network
+
+  oc-postgres:
+    container_name: oc-postgres
+    image: postgres:12
+    environment:
+      POSTGRES_USER: ocAdmin
+      POSTGRES_PASSWORD: officeCh@ngeBrx29
+      POSTGRES_DB: oc-db
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - oc_postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    networks:
+      - oc-network
+
+  oc-api:
+    container_name: oc-api
+    image: oc-api:latest
+    build: ./oc-api
+    ports:
+      - "5000:5000"
+    depends_on:
+      - oc-postgres
+    networks:
+      - oc-network
+
+volumes:
+  oc_postgres:
+
+networks:
+  oc-network:
+    driver: bridge

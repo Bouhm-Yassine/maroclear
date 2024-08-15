@@ -1,0 +1,22 @@
+.vertical-center-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vertical-center-modal .ant-modal {
+  padding: 0;
+  top: 0;
+  width: 570px !important;
+  height: auto !important;
+}
+
+.ant-modal-footer {
+  padding: 32px;
+  padding-top: 8px;
+}
+
+.ant-modal-body {
+  padding: 32px;
+  padding-bottom: 0px;
+}

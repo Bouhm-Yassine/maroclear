@@ -1,0 +1,40 @@
+<nz-avatar
+  nz-dropdown
+  [nzGap]="2"
+  [nzDropdownMenu]="menu"
+  [nzText]="'AB'"
+  class="text-primary bg-red-100 cursor-pointer shadow-md"
+></nz-avatar>
+
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <div nz-menu style="min-width: 300px">
+    <div class="m-2">
+      <div class="flex items-center justify-start mb-3">
+        <div class="p-2">
+          <nz-avatar
+            [nzSize]="60"
+            nzIcon="user"
+            class="text-primary bg-red-100 text-2xl p-0"
+          ></nz-avatar>
+        </div>
+        <div class="flex justify-start flex-col ml-4">
+          <h4 class="m-0 font-normal">ADMIN ADMIN</h4>
+          <app-tag class="w-fit mt-2" [value]="'ADMIN'" />
+          <div class="text-gray-600 mt-2">
+            <div class="flex items-center">
+              <i class="mr-2" nz-icon nzType="mail" nzTheme="twotone"></i>
+              <span>admin.admin</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nz-divider class="my-0"></nz-divider>
+
+      <li class="mt-2" nz-menu-item (click)="(null)">
+        <i class="mr-2" nz-icon nzType="logout"></i>
+        <span>Logout</span>
+      </li>
+    </div>
+  </div>
+</nz-dropdown-menu>

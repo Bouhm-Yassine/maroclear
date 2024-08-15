@@ -1,0 +1,87 @@
+<div class="h-full flex flex-col">
+  <div class="flex-auto h-0 overflow-y-auto overflow-x-auto bg-white mt-4 p-1">
+    <div class="p-3 flex gap-5">
+      <button nz-button nzType="default">Primary Button</button>
+      <button nz-button nzType="primary">Default Button</button>
+      <button nz-button nzType="dashed">Dashed Button</button>
+      <button nz-button nzType="text">Text Button</button>
+      <a nz-button nzType="link">Link Button</a>
+    </div>
+    <div class="p-3">
+      <p class="font-extralight">Font Weight ExtraLight</p>
+      <p class="font-light">Font Weight Light</p>
+      <p class="font-normal">Font Weight Normal</p>
+      <p class="font-semibold">Font Weight semibold</p>
+      <p class="font-bold">Font Weight bold</p>
+      <p class="font-extrabold">Font Weight extrabold</p>
+      <p class="font-black">Font Weight black</p>
+
+      <p class="text-primary font-medium">Text primary</p>
+      <p class="text-secondary font-medium">Text secondary</p>
+
+      <nz-radio-group [(ngModel)]="radioValue">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+      <br />
+      <br />
+      <nz-checkbox-group
+        [(ngModel)]="checkOptionsOne"
+        (ngModelChange)="log(checkOptionsOne)"
+      ></nz-checkbox-group>
+      <br />
+      <br />
+      <nz-checkbox-group
+        [(ngModel)]="checkOptionsTwo"
+        (ngModelChange)="log(checkOptionsTwo)"
+      ></nz-checkbox-group>
+      <br />
+      <br />
+      <nz-checkbox-group
+        [(ngModel)]="checkOptionsThree"
+        (ngModelChange)="log(checkOptionsThree)"
+      ></nz-checkbox-group>
+      <br />
+      <br />
+      <nz-form-item>
+        <nz-form-control>
+          <nz-input-group nzPrefixIcon="user">
+            <input type="text" nz-input placeholder="Username" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzRequired>Comment</nz-form-label>
+        <nz-form-control nzHasFeedback>
+          <nz-textarea-count [nzMaxCharacterCount]="2000">
+            <textarea
+              nz-input
+              rows="2"
+              placeholder="write any thing"
+            ></textarea>
+          </nz-textarea-count>
+        </nz-form-control>
+      </nz-form-item>
+      <br />
+      <br />
+      <nz-table #basicTable [nzData]="listOfData">
+        <thead>
+          <tr>
+            <th [nzSortFn]="true" nzColumnKey="fullname">Name</th>
+            <th>Age</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of basicTable.data">
+            <td>{{ data.name }}</td>
+            <td>{{ data.age }}</td>
+            <td>{{ data.address }}</td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<nz-table
+  #table
+  nzSize="middle"
+  nzOuterBordered
+  [nzData]="transactionState.data()"
+  [nzFrontPagination]="true"
+  [nzShowPagination]="true"
+  [nzTotal]="transactionState.total()"
+  [nzPageSize]="pageSize"
+  [nzPageIndex]="pageIndex"
+>
+  <thead>
+    <tr>
+      <th [nzSortFn]="true">Emetteur</th>
+      <th [nzSortFn]="true">Type d'action</th>
+      <th [nzSortFn]="true">Date d'émission</th>
+      <th [nzSortFn]="true">Date d'échéance</th>
+      <th [nzSortFn]="true">Dividendes</th>
+      <th [nzSortFn]="true">Intérêts</th>
+      <th [nzSortFn]="true">Dépositaire inscription</th>
+      <th [nzSortFn]="true">Exclusif</th>
+      <th [nzSortFn]="true">Dépositaire radiation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of table.data">
+      <td>{{ data.emetteur }}</td>
+      <td>{{ data.type_action }}</td>
+      <td>{{ data.date_emission | date : "mediumDate" }}</td>
+      <td>{{ data.date_echeance | date : "mediumDate" }}</td>
+      <td>
+        <app-tag [value]="data.dividende + '%'" />
+      </td>
+      <td>
+        <app-tag [value]="data.interet + '%'" />
+      </td>
+      <td>{{ data.depositaire_inscription }}</td>
+      <td>
+        <app-tag
+          [value]="data.exclusif"
+          [type]="data.exclusif == 'Oui' ? 'green-white' : 'red-white'"
+        />
+      </td>
+      <td>{{ data.depositaire_radiation }}</td>
+    </tr>
+  </tbody>
+</nz-table>

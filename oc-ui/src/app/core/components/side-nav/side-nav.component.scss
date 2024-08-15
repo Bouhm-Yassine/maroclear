@@ -1,0 +1,64 @@
+// Menu item selected
+.ant-menu-item.ant-menu-item-selected {
+  color: #cd6d1f;
+}
+
+// Submenu item selected
+.ant-menu-item.ant-menu-item-selected div {
+  border-radius: 6px;
+  border-left: 2px solid #cd6d1f;
+  background: rgba(241, 37, 41, 0.1);
+  padding-left: 16px;
+  color: white;
+  width: 75%;
+  position: absolute;
+  left: 32px;
+  top: 0;
+}
+
+.ant-menu-item.ant-menu-item-selected::after {
+  border-right: none;
+}
+
+.ant-menu-item.ant-menu-item-selected {
+  background: transparent;
+}
+
+.ant-menu-item {
+  margin: 0;
+}
+
+.ant-menu-item:hover {
+  color: #cd6d1f;
+}
+
+.ant-menu-submenu:hover {
+  color: #cd6d1f;
+}
+
+.ant-menu {
+  background: none;
+  color: white;
+}
+
+.side-nav-divider {
+  height: 1px;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin: auto;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+::ng-deep {
+  .ant-menu-submenu-arrow, // arrow color
+  .ant-menu-submenu:hover .ant-menu-submenu-title > .ant-menu-submenu-arrow, // arrow color when hovoring over submenu
+  .ant-menu-submenu:hover .ant-menu-submenu-title, // submenu title color when hovoring over submenu
+  .ant-menu-light .ant-menu-submenu-title:hover {
+    color: white;
+  }
+
+  .ant-menu-submenu-selected {
+    color: white;
+  }
+}

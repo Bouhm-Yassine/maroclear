@@ -1,0 +1,17 @@
+<div
+  nz-tooltip
+  [nzTooltipTitle]="displayedTooltip"
+  class="text-sm font-normal whitespace-nowrap rounded-sm py-0.5 px-2 max-w-max flex items-center gap-2"
+  [ngClass]="colorClass"
+>
+  {{ value! | ellipsis : 12 }}
+  <span
+    class="cursor-pointer"
+    style="font-size: 0.6rem; color: gray"
+    *ngIf="closable"
+    nz-icon
+    nzType="close"
+    nzTheme="outline"
+    (click)="onClose.emit()"
+  ></span>
+</div>

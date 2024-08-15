@@ -1,0 +1,30 @@
+<nz-layout class="flex">
+  <nz-sider
+    class="relative z-10 min-h-screen shadow-md"
+    nzCollapsible
+    nzWidth="256px"
+    nzBreakpoint="md"
+    [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null"
+  >
+    <app-side-nav
+      [isCollapsed]="isCollapsed"
+      [appName]="appName"
+      (collapse)="isCollapsed = !isCollapsed"
+    />
+  </nz-sider>
+  <nz-layout>
+    <app-header />
+    <nz-content class="m-4">
+      <div class="h-full">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer class="text-center p-0 mb-5">
+      <b>{{ appName }}</b> &copy;{{ currentYear }} - Powered By
+      <a href="https://www.berexia.com" target="_blank" color="primary"
+        >Berexia</a
+      >
+    </nz-footer>
+  </nz-layout>
+</nz-layout>

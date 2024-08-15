@@ -1,0 +1,90 @@
+<div class="h-full flex flex-col pb-5">
+  <div
+    class="pt-3 sidebar-logo relative items-center transition-all duration-300 overflow-hidden mb-4"
+  >
+    <div class="ml-6 flex items-center gap-8">
+      <img
+        alt="menu"
+        ngSrc="../../../assets/icons/ic_round-menu.svg"
+        width="33"
+        height="33"
+        class="cursor-pointer"
+        (click)="collapse.emit(true)"
+      />
+      <img
+        ngSrc="../../../assets/images/logo.svg"
+        width="200"
+        height="55"
+        alt="logo"
+      />
+    </div>
+  </div>
+
+  <div class="h-full flex flex-col justify-between">
+    <ul
+      class="border-0"
+      nz-menu
+      nzMode="inline"
+      [nzInlineCollapsed]="isCollapsed"
+    >
+      <li nz-menu-item nzMatchRouter routerLink="/transactions">
+        <span nz-icon nzType="audit" nzTheme="outline"></span>
+        <span>Transactions</span>
+      </li>
+
+      <li nz-menu-item nzMatchRouter routerLink="/theme">
+        <span nz-icon nzType="form" nzTheme="outline"></span>
+        <span>Theme</span>
+      </li>
+      <!-- <li nz-submenu nzTitle="Test Submenu" nzIcon="cloud-upload">
+        <ul class="border-0 bg-primary text-white">
+          <li nz-menu-item nzMatchRouter routerLink="/11s">
+            <div>
+              <span>Test 1</span>
+            </div>
+          </li>
+          <li nz-menu-item nzMatchRouter routerLink="/test23">
+            <div>
+              <span>Test 2</span>
+            </div>
+          </li>
+          <li nz-menu-item nzMatchRouter routerLink="/theme">
+            <div>
+              <span>Test 2</span>
+            </div>
+          </li>
+          <li nz-menu-item nzMatchRouter routerLink="/test23">
+            <div>
+              <span>Test 2</span>
+            </div>
+          </li>
+          <li nz-menu-item nzMatchRouter routerLink="/test23">
+            <div>
+              <span>Test 2</span>
+            </div>
+          </li>
+          <li nz-menu-item nzMatchRouter routerLink="/test23">
+            <div>
+              <span>Test 2</span>
+            </div>
+          </li>
+        </ul>
+      </li> -->
+    </ul>
+
+    <div>
+      <ul
+        class="border-0"
+        nz-menu
+        nzMode="vertical"
+        [nzInlineCollapsed]="isCollapsed"
+      >
+        <div class="side-nav-divider"></div>
+        <li nz-menu-item (click)="(null)">
+          <i nz-icon nzType="logout"></i>
+          <span>Logout</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
