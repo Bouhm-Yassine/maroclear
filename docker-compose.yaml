@@ -6,7 +6,7 @@ services:
     restart: always
     build: ./oc-ui
     ports:
-      - "80:80"
+      - "9090:80"
     networks:
       - oc-network
 
