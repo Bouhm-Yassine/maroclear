@@ -60,6 +60,9 @@ export class HeaderComponent implements OnInit {
       case "11s":
         this.title.set("Test");
         break;
+      case "transactions":
+        this.title.set("Transactions");
+        break;
       default:
         break;
     }
