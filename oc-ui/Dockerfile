@@ -1,9 +1,9 @@
 ### STAGE 1: Build ###
-FROM node:16.9-alpine AS build
+FROM node:18.13 AS build
 ARG ENV=production
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
-RUN npm install --legacy-peer-deps
+RUN npm install
 COPY . .
 RUN npm run build -- --configuration=$ENV
 
